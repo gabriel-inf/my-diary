@@ -2,6 +2,9 @@ package com.messages.diario;
 
 
 
+import javax.persistence.criteria.Order;
+
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +26,7 @@ public class GreetingController {
     @GetMapping("/messages")
     public String greetingForm(Model model) {
         model.addAttribute("message", new Message());
-        model.addAttribute("messages", this.messageRepo.findAll());
+        model.addAttribute("messages", this.messageRepo.findAllByOrderByIdDesc());
         return "messages";
     }
 
