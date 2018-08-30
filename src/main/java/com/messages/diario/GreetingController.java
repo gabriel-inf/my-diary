@@ -36,4 +36,10 @@ public class GreetingController {
         return "redirect:/messages";
     }
 
+    @GetMapping("/listMessages")
+    public Iterable<Message> listMessages(){
+          return messageRepo.findAll();
+    }
+
+
 }
