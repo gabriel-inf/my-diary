@@ -73,7 +73,8 @@
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-		</dependency>
+			<version>9.4-1206-jdbc42</version>
+		</dependency> 
     </dependencies>
 
 	<build>
