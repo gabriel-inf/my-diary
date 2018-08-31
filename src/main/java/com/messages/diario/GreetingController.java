@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class GreetingController {
 
-  
-
     private MessageRepository messageRepo; 
 
     public GreetingController(MessageRepository repo){
@@ -36,7 +34,7 @@ public class GreetingController {
         return "redirect:/messages";
     }
 
-    @GetMapping("/listMessages")
+    @GetMapping("/listmessages")
     public Iterable<Message> listMessages(){
           return messageRepo.findAll();
     }

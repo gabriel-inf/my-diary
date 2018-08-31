@@ -1,4 +1,5 @@
 com\messages\diario\Message.class
+com\messages\diario\api\ApiController.class
 com\messages\diario\Application.class
 com\messages\diario\MessageRepository.class
 com\messages\diario\GreetingController.class
