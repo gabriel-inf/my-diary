@@ -10,9 +10,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
+@RequestMapping("/")
 public class GreetingController {
 
     private MessageRepository messageRepo; 
@@ -21,14 +23,14 @@ public class GreetingController {
         this.messageRepo = repo;
     }
 
-    @GetMapping("/messages")
+    @GetMapping
     public String greetingForm(Model model) {
         model.addAttribute("message", new Message());
         model.addAttribute("messages", this.messageRepo.findAllByOrderByIdDesc());
         return "messages";
     }
 
-    @PostMapping("/messages")
+    @PostMapping
     public String greetingSubmit(@ModelAttribute Message message) {
         this.messageRepo.save(message);
         return "redirect:/messages";
