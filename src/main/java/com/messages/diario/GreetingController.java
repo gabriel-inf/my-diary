@@ -33,7 +33,7 @@ public class GreetingController {
     @PostMapping
     public String greetingSubmit(@ModelAttribute Message message) {
         this.messageRepo.save(message);
-        return "redirect:/messages";
+        return "redirect:/";
     }
 
     @GetMapping("/listmessages")
