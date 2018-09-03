@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-@RequestMapping("/")
+
 public class GreetingController {
 
     private MessageRepository messageRepo; 
@@ -23,23 +23,23 @@ public class GreetingController {
         this.messageRepo = repo;
     }
 
-    @GetMapping
+    @GetMapping("/")
     public String greetingForm(Model model) {
         model.addAttribute("message", new Message());
         model.addAttribute("messages", this.messageRepo.findAllByOrderByIdDesc());
         return "messages";
     }
 
-    @PostMapping
+    @PostMapping("/")
     public String greetingSubmit(@ModelAttribute Message message) {
         this.messageRepo.save(message);
         return "redirect:/";
     }
 
-    @GetMapping("/listmessages")
-    public Iterable<Message> listMessages(){
-          return messageRepo.findAll();
-    }
+    // @GetMapping("/listmessages")
+    // public Iterable<Message> listMessages(){
+    //       return messageRepo.findAll();
+    // }
 
 
 }
