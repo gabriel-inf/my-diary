@@ -18,7 +18,7 @@
         <div class="align-middle">
             <div class="card-block">
                 <h1 class="text-center"> Message System</h1>
-                <form class="form-inline align-middle" action="#" th:action="@{/messages}" th:object="${message}" method="post">
+                <form class="form-inline align-middle" action="#" th:action="@{/}" th:object="${message}" method="post">
                     <div class="form-group">
                         <label class="sr-only">Your name</label>
                         <input placeholder="Name" class="form-control" type="text" th:field="*{name}" />

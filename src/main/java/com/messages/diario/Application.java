@@ -20,10 +20,10 @@ public class Application implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception{
-        repository.save(new Message("Gabe", "Uhuuul"));
-        repository.save(new Message("Jonny", "My name is not Jonny"));
-        repository.save(new Message("Willy", "Miau"));
-        repository.save(new Message("Gabe", "This is the last message I sent yesteday =O"));
+        // repository.save(new Message("Gabe", "Uhuuul"));
+        // repository.save(new Message("Jonny", "My name is not Jonny"));
+        // repository.save(new Message("Willy", "Miau"));
+        // repository.save(new Message("Gabe", "This is the last message I sent yesteday =O"));
     }
 
 }
